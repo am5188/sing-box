@@ -9,9 +9,9 @@ curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh \
 | sudo bash
 ```
 
-- 脚本会自动计算下载包的 SHA256 并提示，只有你确认后才继续安装。
+- 出于安全原因，仍需把脚本输出传给 `sudo bash`，便于你掌控正在执行的内容；脚本会在下载完成后自动算出 SHA256 并提示确认。
+- 如果想完全避免管道执行，也可以 `curl -O install.sh` 后手动 `sudo bash install.sh`，效果一样。
 - 如需指定 sing-box 版本，可追加 `-v vX.Y.Z`；也可以使用 `-f` 指定本地 tar 包。
-- 安装完成后会生成 `sb`（菜单）与 `sing-box` 命令，逻辑与原版一致。
 
 # 使用
 
@@ -34,10 +34,12 @@ sudo rm -rf /etc/sing-box /usr/local/bin/sing-box /var/log/sing-box
 sudo sed -i '/alias sb=/d;/alias sing-box=/d' /root/.bashrc
 ```
 
-# 反馈
+# 反馈与致谢
 
 - 项目仓库：[https://github.com/am5188/sing-box](https://github.com/am5188/sing-box)
 - 原版项目：[https://github.com/233boy/sing-box](https://github.com/233boy/sing-box)
+
+> **致谢与说明**：本仓库基于 233boy/sing-box 二次整理。原脚本一键安装、菜单化管理、协议覆盖广等特性十分优秀，为社区用户提供了极高的易用性；我们仅在此基础上移除了推广内容、改用更严格的下载校验，并增加了安全提示，操作交互保持原样。若你想保留自己的分支，直接 fork 之后把命令中的 `am5188` 改成你的 GitHub 用户名即可。
 
 # 免责声明
 
