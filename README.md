@@ -9,8 +9,8 @@ curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh \
 | sudo bash
 ```
 
-- 出于安全原因，仍需把脚本输出传给 `sudo bash`，便于你掌控正在执行的内容；脚本会在下载完成后自动算出 SHA256 并提示确认。
-- 如果想完全避免管道执行，也可以 `curl -O install.sh` 后手动 `sudo bash install.sh`，效果一样。
+- 脚本会自动计算 SHA256 并提示确认；即便通过管道执行，也会在终端要求你按 `y` 才继续。
+- 如果想先下载再执行，可 `curl -O install.sh && sudo bash install.sh`，逻辑相同。
 - 如需指定 sing-box 版本，可追加 `-v vX.Y.Z`；也可以使用 `-f` 指定本地 tar 包。
 
 # 使用
