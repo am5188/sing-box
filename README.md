@@ -5,8 +5,7 @@
 # 安装
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh \
-| sudo bash
+curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh | sudo bash
 ```
 
 - 脚本会自动计算 SHA256 并提示确认；即便通过管道执行，也会在终端要求你按 `y` 才继续。
