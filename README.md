@@ -6,7 +6,7 @@
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh \
-| sudo bash -s --
+| sudo bash
 ```
 
 - 脚本会自动计算下载包的 SHA256 并提示，只有你确认后才继续安装。
