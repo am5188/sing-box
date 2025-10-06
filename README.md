@@ -6,11 +6,11 @@
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/am5188/sing-box/main/install.sh \
-| sudo bash -s -- -c <sing-box 对应的 SHA256 值>
+| sudo bash -s --
 ```
 
-- 默认拉取最新稳定版的 sing-box Linux 发行包，可通过 `-v vX.Y.Z` 指定版本。
-- 推荐从 GitHub release 下载对应 tar 包并运行 `sha256sum` 得到校验值；如需跳过校验，可附加 `--allow-insecure`（不建议）。
+- 脚本会自动计算下载包的 SHA256 并提示，只有你确认后才继续安装。
+- 如需指定 sing-box 版本，可追加 `-v vX.Y.Z`；也可以使用 `-f` 指定本地 tar 包。
 - 安装完成后会生成 `sb`（菜单）与 `sing-box` 命令，逻辑与原版一致。
 
 # 使用

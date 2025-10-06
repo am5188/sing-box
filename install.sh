@@ -409,6 +409,18 @@ main() {
     # check background tasks status
     check_status
 
+    # show sha256 for confirmation
+    if [[ ! $is_core_file && -f $is_core_ok ]]; then
+        core_sha=$(sha256sum "$is_core_ok" | awk '{print $1}')
+        msg warn "sing-box ${is_core_ver:-最新版本} 的 SHA256: ${core_sha}"
+        msg warn "请确认该哈希值与官方发布一致后再继续安装。"
+        read -rp "确认继续安装? [y/N]: " confirm_sha
+        if [[ ! $confirm_sha =~ ^[Yy]$ ]]; then
+            msg warn "已取消安装。"
+            exit_and_del_tmpdir
+        fi
+    fi
+
     # test $is_core_file
     if [[ $is_core_file ]]; then
         mkdir -p $tmpdir/testzip
